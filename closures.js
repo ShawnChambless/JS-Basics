@@ -11,10 +11,13 @@ var outer = function(){
 
   //Code Here
 
+var inner = outer();
+
 //Once you do that, invoke inner.
 
   //Code Here
 
+  inner();
 
 
 //Next problem
@@ -34,7 +37,8 @@ var callFriend = function(){
 
   //Code Here
 
-
+var newCallFriend = callFriend();
+newCallFriend('435-215-9248');
 
 //Next Problem
 
@@ -45,11 +49,22 @@ var callFriend = function(){
 */
 
   //Code Here
+
+  var makeCounter = function() {
+
+      var num = 0;
+      var addOne = function() {
+          return ++num;
+      }
+      return addOne;
+  }
+
+
   var count = makeCounter();
-  count() // 1
-  count() // 2
-  count() // 3
-  count() // 4
+  count(); // 1
+  count(); // 2
+  count(); // 3
+  count(); // 4
 
 
 
@@ -64,15 +79,30 @@ var callFriend = function(){
 
   //Code Here
 
+var inception = function(argFn) {
 
+    return function() {
+        argFn();
+    }
+}
 
+var innerFn = function() {
+    console.log("worked")
+}
+var newInception = inception(innerFn);
+newInception();
 //Next Problem
 
 
 
 /*
-  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
+  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first
+  parameter will be an anonymous function and the second parameter, 'N', will be a number.
+  Now, in 'fnCounter', allow the anonymous function to be invoked 'N' number of times. After it's been
+  invoked 'N' number of times, return 'STOP'.
 */
+
+//code here
 
 
 
@@ -89,10 +119,13 @@ var callFriend = function(){
     }
   };
 
-  Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
+  Above you have a function named counter. Examine the function (without running the code) then
+  below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function
+  or evaluates an expression after a specified number of milliseconds.
 
     //Answer Here
 
+    // counter will log '5' 5 times each time delaying 1 second from the last.
 
   Now, run the function in your console and note what happpens.
 
@@ -100,13 +133,20 @@ var callFriend = function(){
 
     //Answer Here
 
+    // Wrong. It logged 6 all 5 times 1 second from the last.
 
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc)
 */
 
     //Code Here
-
-
+    var counter = function(){
+      for (var i = 1; i <= 5; i++) {
+        setTimeout( function timer(){
+            console.log( i );
+        }, i*1000 );
+      }
+    };
+counter();
 
 //Next Problem
 
@@ -114,6 +154,7 @@ var callFriend = function(){
 
 /*
   Make the following code work
+var function() {
 
   funcArray[0]() //0
   funcArray[1]() //1
@@ -124,5 +165,3 @@ var callFriend = function(){
 
   *Hint: Don't let this fool you. Break down what's really happening here.
 */
-
-

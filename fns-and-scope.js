@@ -7,6 +7,14 @@ var name = 'Tyler';
 
   //Code Here
 
+var isTyler = function(name) {
+    if (name === 'Tyler') {
+        return 'True'
+    }
+    else {
+        return 'False'
+    }
+}
 
 //Next problem
 
@@ -17,6 +25,10 @@ var name = 'Tyler';
 
   //Code Here
 
+var getName = function() {
+    var name = prompt('What is your name');
+    return name;
+}
 
 //Next Problem
 
@@ -27,7 +39,11 @@ var name = 'Tyler';
 
   //Code Here
 
+var welcome = function(msg){
+    alert('Welcome ' + msg);
+}
 
+welcome(getName());
 //Next problem
 
 
@@ -37,6 +53,7 @@ var name = 'Tyler';
 
   //Answer Here
 
+//parameters are the placeholder phrase for arguments.
 
 //Next problem
 
@@ -47,7 +64,7 @@ var name = 'Tyler';
 
   //Answer Here
 
-
+//false, Nan, undefined,
 
 //Next Problem
 
@@ -57,13 +74,20 @@ var name = 'Tyler';
 
   //Code Here
 
+var myName = function() {
+    return 'Shawn';
+}
+
+
 //Now save the function definition of myName into a new variable called newMyName
 
   //Code Here
 
+var newMyName = myName;
+
 //Now alert the result of invoking newMyName
 
-
+alert(newMyName());
 
 //Next problem
 
@@ -73,8 +97,18 @@ var name = 'Tyler';
 
   //Code Here
 
+var outerFn = function() {
+    return function() {
+        return 'Shawn';
+    }
+}
+
 //Now save the result of invoking outerFn into a variable called innerFn.
 
   //Code Here
 
+var innerFn = outerFn();
+
 //Now invoke innerFn.
+
+innerFn();
